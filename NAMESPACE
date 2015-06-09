@@ -2,5 +2,7 @@
 
 export(get_kd_avg)
 export(get_kd_year)
+export(get_turbidity_avg)
 export(secchi)
+export(turbidity)
 import(dplyr)
