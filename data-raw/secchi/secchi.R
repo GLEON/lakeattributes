@@ -41,11 +41,11 @@ secchi$site_id = toupper(secchi$site_id)
 if(file.exists('R/sysdata.rda')){
 	sysdata = new.env()
 	load('R/sysdata.rda', envir=sysdata, verbose=TRUE)
-	sysdata = sysdata$sysdata
+	rm(sysdata, envir=sysdata)#weird hack, I don't understand save
 }else{
 	sysdata = new.env()
 }
 
 sysdata$secchi = secchi
-save(file = "R/sysdata.rda", envr=sysdata, compress=TRUE)
+save(list=names(sysdata), file = "R/sysdata.rda", envr=sysdata, compress=TRUE)
 
