@@ -1,7 +1,7 @@
 Package: lakeattributes
 Type: Package
 Title: A collection of lake attribute data
-Version: 0.2.0
+Version: 0.2.1
 Date: 2015-05-18
 Author: Luke Winslow
 Maintainer: Luke Winslow <lwinslow@usgs.gov>

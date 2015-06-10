@@ -8,7 +8,7 @@ library(lubridate)
 swims = read.table(gzfile('data-raw/secchi/secchi_data_swims_in_situ_fixed.csv.gz'), sep=',', 
 								 header=TRUE, as.is=TRUE, quote="\"", comment.char="")
 
-swims_clean = transmute(swims, site_id=paste0('WBIC_', Station.ID), year=year(as.Date(START_DATETIME)),
+swims_clean = transmute(swims, site_id=paste0('WBIC_', WBIC), year=year(as.Date(START_DATETIME)),
 												date=START_DATETIME, secchi_m=secchi.m, source='in-situ')
 
 ## Personal communication from Max Wolter (WDNR), dug up from archives
@@ -40,11 +40,12 @@ secchi$site_id = toupper(secchi$site_id)
 #Add secchi data to sysdata if it doesn't already contain it
 if(file.exists('R/sysdata.rda')){
 	sysdata = new.env()
-	load('R/sysdata.rda', envir=sysdata)
+	load('R/sysdata.rda', envir=sysdata, verbose=TRUE)
+	sysdata = sysdata$sysdata
 }else{
 	sysdata = new.env()
 }
 
 sysdata$secchi = secchi
-save(list=names(sysdata), file = "R/sysdata.rda", envr=sysdata, compress=TRUE)
+save(file = "R/sysdata.rda", envr=sysdata, compress=TRUE)
 

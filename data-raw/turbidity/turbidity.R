@@ -23,10 +23,11 @@ turbidity$site_id = toupper(turbidity$site_id)
 if(file.exists('R/sysdata.rda')){
 	sysdata = new.env()
 	load('R/sysdata.rda', envir=sysdata)
+	sysdata = sysdata$sysdata #weird hack, I don't understand save
 }else{
 	sysdata = new.env()
 }
 
 sysdata$turbidity = turbidity
-save(list=names(sysdata), file = "R/sysdata.rda", envr=sysdata, compress=TRUE)
+save(file = "R/sysdata.rda", envr=sysdata, compress=TRUE)
 
