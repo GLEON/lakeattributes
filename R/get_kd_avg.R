@@ -41,7 +41,7 @@ get_kd_avg = function(ids, default.if.null=FALSE, src='in-situ'){
 	tmp = filter(secchi, site_id %in% ids, source==src)
 	
 	tmp = group_by(tmp, site_id) %>%
-					summarise(kd_avg=mean(secchiConv/secchi_m)) %>%
+					summarise(kd_avg=secchiConv/mean(secchi_m)) %>%
 					right_join(data.frame(site_id=ids, stringsAsFactors=FALSE))  #this maintains order
 
 	if(default.if.null){
