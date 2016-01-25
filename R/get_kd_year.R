@@ -20,8 +20,8 @@
 #'@examples
 #'#Get and plot Kds for a lake over time
 #'years = 1970:2012
-#'kds   = get_kd_year('6100', years)
-#'plot(years, kds, type='o')
+#'kds   = get_kd_year('WBIC_1881900', years)
+#'plot(secchi_m~year, kds, type='o')
 #'
 #'
 #'@export
