@@ -60,7 +60,7 @@ read_aes = function(filename, key) {
 	key = c(as.raw(rep(0,16-nchar(key)%%16)), charToRaw(key))
 	
 	#get size of file for readBin buffer
-	fsize = file.info('test.dat')$size
+	fsize = file.info(filename)$size
 	
 	#buffer input length by 100 bytes
 	dat <- readBin(filename, "raw", n=(fsize+100))
