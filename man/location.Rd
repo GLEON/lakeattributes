@@ -16,7 +16,7 @@ lat \tab numeric \tab Lake Latitude\cr
 }
 }
 \examples{
-head(area)
+head(location)
 
 }
 
