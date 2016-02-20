@@ -35,7 +35,7 @@ get_kd_avg = function(ids, default.if.null=FALSE, src='in-situ'){
 	
 	secchiConv = 1.7
 	
-	ids = toupper(ids)
+	#ids = toupper(ids)
 	
 	#first filter by site ids so we're using a smaller dataset
 	tmp = filter(secchi, site_id %in% ids, source==src)
