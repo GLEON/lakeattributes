@@ -5,9 +5,9 @@
 	#look for LAGOS_KEY environ variable
 	if(Sys.getenv('LAGOS_KEY', unset = '') != ''){
 		#if there, use to open lagos datasets and append to secchi, depth
-
+		
 		## load LAGOS secchi data and append
-		lagos_secchi = read_aes('data/lagos_secchi.edt', Sys.getenv('LAGOS_KEY', unset = ''))
+		lagos_secchi = read_aes(system.file('extdata/lagos_secchi.edt', package=pkgname), Sys.getenv('LAGOS_KEY', unset = ''))
 		names(lagos_secchi) = c('site_id', 'secchi_m', 'year', 'month')
 		
 		lagos_secchi$date = ISOdate(lagos_secchi$year, lagos_secchi$month, 15)
@@ -23,7 +23,7 @@
 	  
 	  
 	  #load lagos depth data
-	  lagos_zmax = read_aes('data/lagos_zmax.edt', Sys.getenv('LAGOS_KEY', unset = ''))
+	  lagos_zmax = read_aes(system.file('extdata/lagos_zmax.edt', package=pkgname), Sys.getenv('LAGOS_KEY', unset = ''))
 	  names(lagos_zmax) = c('site_id', 'zmax_m')
 	  zmax = rbind(zmax, lagos_zmax)
 	  unlockBinding('zmax', parent.env(environment()))

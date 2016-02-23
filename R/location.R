@@ -16,7 +16,7 @@
 #'@docType data
 #'
 #'@examples
-#'head(area)
+#'head(location)
 #'
-#'@export area
+#'@export location
 NULL
