@@ -23,7 +23,7 @@ get_zmax = function(id){
 	lake_zmax = subset(zmax, site_id == id)
 	if(nrow(lake_zmax) < 1){
 		
-		return(get_bathy(site_id)$depth)
+			return(get_bathy(site_id, cone_est=FALSE)$depth)
 		
 	}else{
 		if(nrow(lake_zmax) > 1){
