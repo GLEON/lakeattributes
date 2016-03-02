@@ -1,8 +1,8 @@
 #read in zmax data
 
 bathybase = read.csv('data-raw/depth/bathynhd_final.csv', sep=',', header=TRUE, as.is=TRUE)
-bathybase$lat = NULL
-bathybase$lon = NULL
+
+bathybase = bathybase[, c('bathybaseid', 'depth_max', 'id')]
 
 names(bathybase) = c('bathybaseid', 'zmax_m', 'site_id')
 
