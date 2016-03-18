@@ -5,9 +5,12 @@
 nhd = read.table('data-raw/area/nhd_area.csv', sep=',', header=TRUE, quote='\"', as.is=TRUE)
 names(nhd) = c('site_id', 'area_m2')
 
+lter = read.csv('data-raw/area/lter_lake_areas.csv', as.is=TRUE)
+lter$site_id = lter$id
+lter$area_m2 = lter$area_ha * 1e4
 
-#rename to area
-area = nhd
+#merge to area
+area = rbind(nhd, lter[,c('site_id', 'area_m2')])
 
 #Add area data to sysdata if it doesn't already contain it
 if(file.exists('R/sysdata.rda')){

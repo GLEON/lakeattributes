@@ -4,10 +4,12 @@
 \alias{get_bathy}
 \title{Get Hypsometry for a given lake}
 \usage{
-get_bathy(site_id)
+get_bathy(site_id, cone_est = TRUE)
 }
 \arguments{
 \item{site_id}{The character ID for the requested data}
+
+\item{cone_est}{Estimate bathymetry as a cone using available zmax data}
 }
 \value{
 Data frame with columns \code{depth} and \code{area}
