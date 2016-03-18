@@ -1,12 +1,19 @@
 #read in zmax data
 
 bathybase = read.csv('data-raw/depth/bathynhd_final.csv', sep=',', header=TRUE, as.is=TRUE)
-bathybase$lat = NULL
-bathybase$lon = NULL
+
+bathybase = bathybase[, c('bathybaseid', 'depth_max', 'id')]
 
 names(bathybase) = c('bathybaseid', 'zmax_m', 'site_id')
 
-zmax = bathybase[, c('site_id', 'zmax_m')]
+
+##read in lter zmaxes
+lter = read.csv('data-raw/depth/lter_zmax.csv', as.is=TRUE)
+names(lter) = c('name', 'site_id', 'zmax_m')
+
+
+zmax = rbind(bathybase[, c('site_id', 'zmax_m')], lter[,c('site_id', 'zmax_m')])
+
 
 #Add area data to sysdata if it doesn't already contain it
 if(file.exists('R/sysdata.rda')){
