@@ -28,7 +28,6 @@
 get_kd_year = function(id, years, src='in-situ'){
 	
 	secchiConv	<-	1.7
-	id = toupper(id)
 	
 	#only one lake allowed
 	tmp = filter(secchi, site_id == id)
