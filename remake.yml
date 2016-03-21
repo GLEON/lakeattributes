@@ -1,0 +1,29 @@
+packages:
+  - dplyr
+  - digest
+  - lubridate
+  
+sources:
+  - data-raw/depth/depths.R
+  - data-raw/data_combine.R
+  - R/encryption_helpers.R
+
+
+targets:
+  all: 
+    depends: 
+      - R/sysdata.rda
+
+  zmax:
+    command: depths()
+    depends: 
+      - data-raw/depth/all_depths.edt
+      - data-raw/depth/lter_zmax.csv
+
+#  secchi:
+#    command: secchi()
+#    depends:
+#      - data-raw/secchi/annual_mean_secchi.txt
+
+  R/sysdata.rda:
+    command: data_combine(zmax=zmax)

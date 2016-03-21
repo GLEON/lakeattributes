@@ -11,7 +11,6 @@
 get_turbidity_avg = function(ids, src='in-situ'){
 		
 	
-	ids = toupper(ids)
 	
 	#first filter by site ids so we're using a smaller dataset
 	tmp = filter(turbidity, site_id %in% ids, source==src)
