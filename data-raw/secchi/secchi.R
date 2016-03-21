@@ -40,7 +40,6 @@ wqp$source = 'in-situ'
 secchi = rbind(swims_clean, sawyer_clean, satellite_clean, lter, wqp)
 
 #Make all site IDS caps
-#secchi$site_id = toupper(secchi$site_id)
 
 #Add secchi data to sysdata if it doesn't already contain it
 if(file.exists('R/sysdata.rda')){
