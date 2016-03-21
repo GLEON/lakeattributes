@@ -24,7 +24,7 @@
 	  
 	  #load lagos depth data
 	  lagos_zmax = read_aes(system.file('extdata/lagos_zmax.edt', package=pkgname), Sys.getenv('LAGOS_KEY', unset = ''))
-	  names(lagos_zmax) = c('site_id', 'zmax_m')
+	  names(lagos_zmax) = c('site_id', 'source', 'zmax_m')
 	  zmax = rbind(zmax, lagos_zmax)
 	  unlockBinding('zmax', parent.env(environment()))
 	  zmax <<- zmax
