@@ -5,6 +5,7 @@ packages:
   
 sources:
   - data-raw/depth/depths.R
+  - data-raw/wtemp/wtemp.R
   - data-raw/data_combine.R
   - R/encryption_helpers.R
 
@@ -25,5 +26,10 @@ targets:
 #    depends:
 #      - data-raw/secchi/annual_mean_secchi.txt
 
+  temp:
+    command: wtemp()
+    depends:
+      - data-raw/wtemp/wqp_temperature.tsv.gz
+
   R/sysdata.rda:
-    command: data_combine(zmax=zmax)
+    command: data_combine(zmax=zmax, wtemp=temp)
