@@ -33,7 +33,7 @@ lter$source = 'in-situ'
 
 
 ## WQP Secchi data
-wqp = read.table('data-raw/secchi/wqp_secchi.tsv', sep='\t', header=TRUE, as.is=TRUE)
+wqp = read.table(gzfile('data-raw/secchi/wqp_secchi.tsv.gz'), sep='\t', header=TRUE, as.is=TRUE)
 wqp = transmute(wqp, site_id=id, year=year(as.POSIXct(Date)), date=Date, secchi_m=secchi)
 wqp$source = 'in-situ'
 
