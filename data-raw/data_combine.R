@@ -12,7 +12,7 @@ data_combine = function(...){
 	
 	data_in = list(...)
 	data_names = names(data_in)
-	for(i in length(data_names)){
+	for(i in 1:length(data_names)){
 		sysdata[[data_names[i]]] = data_in[[i]]
 	}
 	
