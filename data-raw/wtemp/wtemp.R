@@ -11,9 +11,9 @@ wtemp = function(){
 	wqp$source = 'in-situ'
 	
 	
-	wtemp = rbind(wqp)
+	wqp = rbind(wqp)
 	
-	return(wtemp)
+	return(wqp)
 }
 # 
 # #Add wtemp data to sysdata if it doesn't already contain it
