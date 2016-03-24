@@ -27,10 +27,11 @@ targets:
 #    depends:
 #      - data-raw/secchi/annual_mean_secchi.txt
 
-  temp:
-    command: wtemp()
+  wtemp:
+    command: watertemp()
     depends:
       - data-raw/wtemp/all_temp.tsv
 
   R/sysdata.rda:
-    command: data_combine(zmax=zmax, wtemp=temp)
+    command: data_combine(zmax, wtemp)
+    
