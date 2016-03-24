@@ -2,6 +2,7 @@ packages:
   - dplyr
   - digest
   - lubridate
+  - fasttime
   
 sources:
   - data-raw/depth/depths.R
@@ -29,7 +30,7 @@ targets:
   temp:
     command: wtemp()
     depends:
-      - data-raw/wtemp/wqp_temperature.tsv.gz
+      - data-raw/wtemp/all_temp.tsv
 
   R/sysdata.rda:
     command: data_combine(zmax=zmax, wtemp=temp)
