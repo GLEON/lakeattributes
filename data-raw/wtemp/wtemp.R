@@ -3,7 +3,7 @@
 #library(lubridate)
 #parse and save the wtemp data
 
-wtemp = function(){
+watertemp = function(){
 	## WQP wtemp data
 	wqp = read.table('data-raw/wtemp/all_temp.tsv', sep='\t', header=TRUE, as.is=TRUE)
 	
