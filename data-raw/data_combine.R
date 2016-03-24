@@ -16,6 +16,6 @@ data_combine = function(...){
 		sysdata[[data_names[i]]] = data_in[[i]]
 	}
 	
-	sysdata$zmax = zmax
+	#sysdata$zmax = zmax
 	save(list=names(sysdata), file = "R/sysdata.rda", envr=sysdata, compress=TRUE)	
 }
