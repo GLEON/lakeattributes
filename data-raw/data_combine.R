@@ -1,4 +1,4 @@
-data_combine = function(zmax, wtemp...){
+data_combine = function(zmax, wtemp, ...){
 
 	
 	#Add area data to sysdata if it doesn't already contain it
