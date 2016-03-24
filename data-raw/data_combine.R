@@ -1,4 +1,4 @@
-data_combine = function(...){
+data_combine = function(zmax, wtemp...){
 
 	
 	#Add area data to sysdata if it doesn't already contain it
@@ -10,12 +10,8 @@ data_combine = function(...){
 		sysdata = new.env()
 	}
 	
-	data_in = list(...)
-	data_names = names(data_in)
-	for(i in 1:length(data_names)){
-		sysdata[[data_names[i]]] = data_in[[i]]
-	}
+	sysdata$zmax = zmax
+	sysdata$wtemp = wtemp
 	
-	#sysdata$zmax = zmax
-	save(list=names(sysdata), file = "R/sysdata.rda", envr=sysdata, compress=TRUE)	
+	save(list=names(sysdata), file = "R/sysdata.rda", envr=sysdata, compress=TRUE)
 }
