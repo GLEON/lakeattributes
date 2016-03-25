@@ -4,7 +4,7 @@
 \alias{get_kd_avg}
 \title{Get light attenuation coefficient for a given lake}
 \usage{
-get_kd_avg(ids, default.if.null = FALSE, src = "in-situ")
+get_kd_avg(ids, default.if.null = FALSE, src = "in-situ", datasource = NA)
 }
 \arguments{
 \item{ids}{The character ID for the requested kd data. Can be a character vector.}

@@ -28,13 +28,13 @@
 #'
 #'
 #'@export
-get_kd_best = function(id, years){
+get_kd_best = function(id, years, datasource=NA){
 	
 	if(missing(years)){
 		stop('Must specify requested years')
 	}
 	
-	insitu = get_kd_year(id, years=years, src = 'in-situ') %>%
+	insitu = get_kd_year(id, years=years, src = 'in-situ', datasource=datasource) %>%
 		group_by(year) %>%
 		summarise(secchi_avg=mean(secchi_m, na.rm=TRUE))
 	insitu$source = 'in-situ'
@@ -47,7 +47,7 @@ get_kd_best = function(id, years){
 		}
 		
 		## so we know we have a missing secchi value
-		sat = get_kd_year(id, insitu$year[i], src='satellite')
+		sat = get_kd_year(id, insitu$year[i], src='satellite', datasource=datasource)
 		if(nrow(sat) > 0 && !is.na(sat$secchi_m)){
 			insitu$secchi_avg[i] = mean(sat$secchi_m, na.rm=TRUE)
 			insitu$source[i] = 'satellite'
@@ -56,11 +56,11 @@ get_kd_best = function(id, years){
 	
 	## any missing values now, we replace with overall in-situ mean
 	insitu$source[is.na(insitu$secchi_avg)] = 'in-situ mean'
-	insitu$secchi_avg[is.na(insitu$secchi_avg)] = mean(get_kd_year(id, src='in-situ')$secchi_m, na.rm=TRUE)
+	insitu$secchi_avg[is.na(insitu$secchi_avg)] = mean(get_kd_year(id, src='in-situ', datasource=datasource)$secchi_m, na.rm=TRUE)
 	
 	## any missing values now, we replace with overall satellite mean
 	insitu$source[is.na(insitu$secchi_avg)] = 'satellite mean'
-	insitu$secchi_avg[is.na(insitu$secchi_avg)] = mean(get_kd_year(id, src='satellite')$secchi_m, na.rm=TRUE)
+	insitu$secchi_avg[is.na(insitu$secchi_avg)] = mean(get_kd_year(id, src='satellite', datasource=datasource)$secchi_m, na.rm=TRUE)
 	
 	## any missing values now, we replace with overall in-situ population mean
 	# Code:
