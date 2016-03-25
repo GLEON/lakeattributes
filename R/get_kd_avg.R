@@ -29,7 +29,7 @@
 #'
 #'
 #'@export
-get_kd_avg = function(ids, default.if.null=FALSE, src='in-situ'){
+get_kd_avg = function(ids, default.if.null=FALSE, src='in-situ', datasource=NA){
 	
 	default.kd = 0.6983965
 	
@@ -37,6 +37,11 @@ get_kd_avg = function(ids, default.if.null=FALSE, src='in-situ'){
 	
 	#first filter by site ids so we're using a smaller dataset
 	tmp = filter(secchi, site_id %in% ids, source==src)
+	
+	if(!is.na(datasource)){
+		ds = datasource
+		tmp = filter(tmp, datasource %in% ds)
+	}
 	
 	tmp = group_by(tmp, site_id) %>%
 					summarise(kd_avg=secchiConv/mean(secchi_m)) %>%

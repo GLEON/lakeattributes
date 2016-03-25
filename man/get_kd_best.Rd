@@ -4,12 +4,15 @@
 \alias{get_kd_best}
 \title{Return best available secchi/Kd}
 \usage{
-get_kd_best(id, years)
+get_kd_best(id, years, datasource = NA)
 }
 \arguments{
 \item{id}{The character ID for the requested data}
 
 \item{years}{Integer vector of years for which you want Kd values}
+
+\item{datasource}{NA (for no filter) or vector of string sources to filter. Get options in dataset 
+using \code{unique(secchi$datasource)}.}
 }
 \value{
 A data frame with columns 'year', 'secchi_avg', and 'source'.
