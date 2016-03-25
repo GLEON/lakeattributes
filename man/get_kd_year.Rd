@@ -4,7 +4,7 @@
 \alias{get_kd_year}
 \title{Get light attenuation coefficient for a lake through time}
 \usage{
-get_kd_year(id, years, src = "in-situ")
+get_kd_year(id, years, src = "in-situ", datasource = NA)
 }
 \arguments{
 \item{id}{The character ID for the requested data}
@@ -12,6 +12,9 @@ get_kd_year(id, years, src = "in-situ")
 \item{years}{Integer vector of years for which you want Kd values}
 
 \item{src}{The data source, currently one of \code{c('in-situ', 'satellite')}. In-situ observations are default}
+
+\item{datasource}{NA (for no filter) or vector of string sources to filter. Get options in dataset 
+using \code{unique(secchi$datasource)}.}
 }
 \value{
 data.frmae of Kd values with the same number of rows as \code{length(years)}. NA filled when missing.

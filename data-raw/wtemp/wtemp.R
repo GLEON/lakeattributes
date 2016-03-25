@@ -4,16 +4,16 @@
 #parse and save the wtemp data
 
 watertemp = function(){
-	## WQP wtemp data
-	wqp = read.table('data-raw/wtemp/all_temp.tsv', sep='\t', header=TRUE, as.is=TRUE)
+	## wtemp data
+	wtemp = read.table('data-raw/wtemp/all_temp.tsv', sep='\t', header=TRUE, as.is=TRUE)
 	
-	wqp = transmute(wqp, site_id=id, year=year(fasttime::fastPOSIXct(date)), date=fasttime::fastPOSIXct(date), depth=depth, wtemp=wtemp)
-	wqp$source = 'in-situ'
+	wtemp = transmute(wtemp, site_id=id, year=year(fasttime::fastPOSIXct(date)), date=fasttime::fastPOSIXct(date), depth=depth, wtemp=wtemp)
+	wtemp$source = 'in-situ'
 	
 	
-	wqp = rbind(wqp)
+	wtemp = rbind(wtemp)
 	
-	return(wqp)
+	return(wtemp)
 }
 # 
 # #Add wtemp data to sysdata if it doesn't already contain it
