@@ -68,6 +68,6 @@ read_aes = function(filename, key) {
 	raw <- aes$decrypt(dat, raw=TRUE)
 	#remove NUL characters introduced by 16 byte padding above
 	txt <- rawToChar(raw[raw>0])
-	read.csv(text=txt) #maybe switch to serialize/unserialize later
+	read.csv(text=txt, as.is=TRUE) #maybe switch to serialize/unserialize later
 }
 
