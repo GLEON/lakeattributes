@@ -1,4 +1,4 @@
-data_combine = function(zmax, wtemp, ...){
+data_combine = function(zmax, ...){
 
 	
 	#Add area data to sysdata if it doesn't already contain it
@@ -11,7 +11,7 @@ data_combine = function(zmax, wtemp, ...){
 	}
 	
 	sysdata$zmax = zmax
-	sysdata$wtemp = wtemp
+	#sysdata$wtemp = wtemp
 	
 	save(list=names(sysdata), file = "R/sysdata.rda", envr=sysdata, compress=TRUE)
 }
