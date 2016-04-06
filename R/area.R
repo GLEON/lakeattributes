@@ -1,7 +1,7 @@
 #' @title Area data table
 #' 
 #' 
-#' 
+#' @name area
 #' 
 #' @format area data.frame with all available lake areas
 #' 
@@ -16,5 +16,5 @@
 #' @examples
 #' head(area)
 #' 
-#' 
-"area"
+#' @export area
+NULL

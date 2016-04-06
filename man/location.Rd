@@ -4,8 +4,9 @@
 \name{location}
 \alias{location}
 \title{Location data table}
+\format{An object of class \code{data.frame} with 46602 rows and 3 columns.}
 \usage{
-location(df)
+location
 }
 \value{
 Location data.frame with all available lake locations. 
@@ -22,4 +23,5 @@ lat \tab numeric \tab Lake Latitude\cr
 head(location)
 
 }
+\keyword{datasets}
 
