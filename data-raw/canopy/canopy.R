@@ -7,4 +7,4 @@ nlcd_based$source = 'nlcd'
 
 canopy = rbind(nlcd_based)
 #lets just try making it part of 'data'
-save(canopy, file='data/canopy.Rdata')
+save(canopy, file='data/canopy.rdata')

@@ -4,6 +4,10 @@
 \name{wtemp}
 \alias{wtemp}
 \title{Water Temperature data table}
+\format{An object of class \code{data.frame} with 1578066 rows and 6 columns.}
+\usage{
+wtemp
+}
 \value{
 wtemp data.frame with all available observed water temp data.
 
@@ -16,8 +20,14 @@ wtr \tab numeric \tab Observed water temp in deg C\cr
 source \tab character \tab Source (currently only in-situ)\cr
 }
 }
+\description{
+Water temperature observations collected from a variety of
+sourced. Primarily profile data, indexed by NHD PermID.
+}
 \examples{
+data(wtemp)
 head(wtemp)
 
 }
+\keyword{datasets}
 
