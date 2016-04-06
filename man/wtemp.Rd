@@ -11,6 +11,7 @@ wtemp
 \value{
 wtemp data.frame with all available observed water temp data.
 
+
 \tabular{lll}{
 Name \tab Type \tab Description\cr
 site_id \tab character \tab Unique identifier of site\cr

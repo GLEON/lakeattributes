@@ -11,13 +11,8 @@ Name \tab Type \tab Description\cr
 site_id \tab character \tab Unique identifier of site\cr
 area \tab numeric \tab lake area in m^2\cr
 }}
-\usage{
-area
-}
 \examples{
 head(area)
 
-
 }
-\keyword{datasets}
 
