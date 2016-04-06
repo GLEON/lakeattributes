@@ -13,7 +13,9 @@ watertemp = function(){
 	
 	wtemp = rbind(wtemp)
 	
-	return(wtemp)
+	save(wtemp, file='data/wtemp.rdata', compress=TRUE)
+	
+  #return(wtemp)
 }
 # 
 # #Add wtemp data to sysdata if it doesn't already contain it

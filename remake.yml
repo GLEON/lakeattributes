@@ -15,6 +15,7 @@ targets:
   all: 
     depends: 
       - R/sysdata.rda
+      - data/wtemp.rdata
 
   zmax:
     command: depths()
@@ -27,11 +28,11 @@ targets:
 #    depends:
 #      - data-raw/secchi/annual_mean_secchi.txt
 
-  wtemp:
+  data/wtemp.rdata:
     command: watertemp()
     depends:
       - data-raw/wtemp/all_temp.tsv
 
   R/sysdata.rda:
-    command: data_combine(zmax, wtemp)
+    command: data_combine(zmax)
     

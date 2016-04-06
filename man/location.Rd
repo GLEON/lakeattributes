@@ -4,6 +4,9 @@
 \name{location}
 \alias{location}
 \title{Location data table}
+\usage{
+location(df)
+}
 \value{
 Location data.frame with all available lake locations. 
 Usually defined as lake polygon centroid.
