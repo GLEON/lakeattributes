@@ -18,4 +18,5 @@
 #'@examples
 #'head(location)
 #'
-"location"
+#'@export
+NULL
