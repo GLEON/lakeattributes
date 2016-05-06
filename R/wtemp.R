@@ -17,6 +17,8 @@
 #' 
 #' @docType data
 #' 
+#' 
+#' 
 #' @examples
 #' data(wtemp)
 #' head(wtemp)
