@@ -20,10 +20,18 @@
 get_zmax = function(id){
 	site_id = as.character(id)
 	
+	bathy = get_bathy(id, cone_est=FALSE)
+	#quick short circuit. If we have a bathy file, 
+	#return max depth from that. 
+	
+	if(!is.null(bathy)){
+		return(max(bathy$depths, na.rm=TRUE))
+	}
+	
 	lake_zmax = subset(zmax, site_id == id)
 	if(nrow(lake_zmax) < 1){
 		
-			return(max(get_bathy(site_id, cone_est=FALSE)$depth))
+			return(max(get_bathy(site_id, cone_est=FALSE)$depths))
 		
 	}else{
 		if(nrow(lake_zmax) > 1){
