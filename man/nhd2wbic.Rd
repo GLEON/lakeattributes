@@ -11,8 +11,12 @@ Name \tab Type \tab Description\cr
 site_id \tab character \tab Unique identifier of site\cr
 WBIC \tab numeric \tab Wisconsin Water Body Identifier code \cr
 }}
+\usage{
+nhd2wbic
+}
 \examples{
 head(nhd2wbic)
 
 }
+\keyword{datasets}
 

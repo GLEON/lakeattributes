@@ -14,7 +14,7 @@
 #' @docType data
 #' 
 #' @examples
+#' data(nhd2wbic)
 #' head(nhd2wbic)
 #' 
-#' @export
 NULL
