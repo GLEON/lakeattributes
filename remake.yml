@@ -20,7 +20,7 @@ targets:
   zmax:
     command: depths()
     depends: 
-      - data-raw/depth/all_depths.edt
+      - data-raw/depth/all_depths.rds
       - data-raw/depth/lter_zmax.csv
 
 #  secchi:

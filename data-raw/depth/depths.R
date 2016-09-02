@@ -6,19 +6,8 @@ depths = function(){
 	names(lter) = c('name', 'site_id', 'zmax_m')
 	lter$source = 'ntl-lter'
 	
-	
-	#now do lagos stuff
-	if(Sys.getenv('LAGOS_KEY', unset = '') != ''){
-		all_necsc = read_aes('data-raw/depth/all_depths.edt', Sys.getenv('LAGOS_KEY', unset = ''))
-		names(all_necsc) = c('site_id', 'source', 'type', 'zmax_m')
-		
-		#Ugh, hack for LAGOS, write LAGOS out, return all non-lagos data
-		just_lagos = subset(all_necsc, `source`=='lagos')
-		write_aes(just_lagos[, c('site_id', 'source', 'zmax_m')], 'inst/extdata/lagos_zmax.edt', key=Sys.getenv('LAGOS_KEY', unset = ''))
-		
-		all_necsc = subset(all_necsc, `source`!='lagos')
-		
-	}
+	all_necsc = readRDS('data-raw/depth/all_depths.rds')
+	names(all_necsc) = c('site_id', 'source', 'type', 'zmax_m')
 	
 	zmax = rbind(all_necsc[, c('site_id', 'source', 'zmax_m')], lter[,c('site_id', 'source', 'zmax_m')])
 	
