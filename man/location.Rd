@@ -15,8 +15,10 @@ lon \tab numeric \tab Lake Longitude\cr
 lat \tab numeric \tab Lake Latitude\cr
 }
 }
+\description{
+Location data table
+}
 \examples{
 head(location)
 
 }
-

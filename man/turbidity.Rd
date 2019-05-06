@@ -16,8 +16,10 @@ turbidity_ntu \tab numeric \tab Observed or estimated turbidity in NTU\cr
 source \tab character \tab Source (Just in-situ right now)\cr
 }
 }
+\description{
+Turbidity data table
+}
 \examples{
 head(turbidity)
 
 }
-

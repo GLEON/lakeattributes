@@ -4,7 +4,7 @@
 \name{canopy}
 \alias{canopy}
 \title{Lake surrounding canopy height}
-\format{An object of class \code{data.frame} with 8903 rows and 3 columns.}
+\format{An object of class \code{data.frame} with 17437 rows and 3 columns.}
 \usage{
 canopy
 }
@@ -27,4 +27,3 @@ head(canopy)
 
 }
 \keyword{datasets}
-

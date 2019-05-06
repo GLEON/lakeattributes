@@ -26,4 +26,3 @@ used.
 \code{\link{read_aes}}, derived from this post: 
 \url{http://stackoverflow.com/questions/25318800/how-do-i-read-an-encrypted-file-from-disk-with-r}
 }
-

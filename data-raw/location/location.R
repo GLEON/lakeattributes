@@ -6,6 +6,12 @@ names(nhd_locs) = c('site_id', 'lon', 'lat')
 
 location = nhd_locs
 
+# get new footprint data
+new_locations <- readRDS('data-raw/location/lakeattributes_location.rds')
+
+location <- bind_rows(location, new_locations) %>%
+	distinct()
+
 #Add area data to sysdata if it doesn't already contain it
 if(file.exists('R/sysdata.rda')){
 	sysdata = new.env()

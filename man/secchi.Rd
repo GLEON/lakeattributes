@@ -16,8 +16,10 @@ secchi_m \tab numeric \tab Observed or estimated Secchi depth in meters\cr
 source \tab character \tab Source (satellite or in-situ)\cr
 }
 }
+\description{
+Secchi data table
+}
 \examples{
 head(secchi)
 
 }
-
