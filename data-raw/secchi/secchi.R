@@ -32,13 +32,13 @@ secchi <- bind_rows(old_secchi, new_secchi) %>%
 	distinct()
 
 #Add secchi data to sysdata if it doesn't already contain it
-if(file.exists('R/sysdata.rda')){
-	sysdata = new.env()
-	load('R/sysdata.rda', envir=sysdata, verbose=TRUE)
-	rm(sysdata, envir=sysdata)#weird hack, I don't understand save
-}else{
-	sysdata = new.env()
-}
+# if(file.exists('R/sysdata.rda')){
+# 	sysdata = new.env()
+# 	load('R/sysdata.rda', envir=sysdata, verbose=TRUE)
+# 	rm(sysdata, envir=sysdata)#weird hack, I don't understand save
+# }else{
+# 	sysdata = new.env()
+# }
 
 sysdata$secchi = secchi
 save(list=names(sysdata), file = "R/sysdata.rda", envr=sysdata, compress=TRUE)

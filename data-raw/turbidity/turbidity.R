@@ -20,14 +20,14 @@ turbidity = rbind(swims_clean)
 turbidity$site_id = toupper(turbidity$site_id)
 
 #Add turbidity data to sysdata if it doesn't already contain it
-if(file.exists('R/sysdata.rda')){
-	sysdata = new.env()
-	load('R/sysdata.rda', envir=sysdata)
-	rm(sysdata, envir=sysdata)#weird hack, I don't understand save
-	
-}else{
-	sysdata = new.env()
-}
+# if(file.exists('R/sysdata.rda')){
+# 	sysdata = new.env()
+# 	load('R/sysdata.rda', envir=sysdata)
+# 	rm(sysdata, envir=sysdata)#weird hack, I don't understand save
+# 	
+# }else{
+# 	sysdata = new.env()
+# }
 
 sysdata$turbidity = turbidity
 save(list=names(sysdata), file = "R/sysdata.rda", envr=sysdata, compress=TRUE)
