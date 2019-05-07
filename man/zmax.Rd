@@ -12,8 +12,10 @@ site_id \tab character \tab Unique identifier of site\cr
 zmax_m \tab numeric \tab lake max depth in meters\cr
 }
 }
+\description{
+zmax data table
+}
 \examples{
 head(zmax)
 
 }
-

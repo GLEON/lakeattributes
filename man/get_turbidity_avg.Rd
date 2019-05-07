@@ -11,7 +11,9 @@ get_turbidity_avg(ids, src = "in-situ")
 
 \item{src}{The data source, currently one of \code{c('in-situ', 'satellite')}. In-situ observations are default}
 }
+\description{
+Get lake average turbidity
+}
 \author{
 Luke Winslow
 }
-

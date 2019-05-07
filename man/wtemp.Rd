@@ -30,4 +30,3 @@ head(wtemp)
 
 }
 \keyword{datasets}
-

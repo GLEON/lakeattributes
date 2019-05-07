@@ -4,7 +4,8 @@
 \alias{get_kd_avg}
 \title{Get light attenuation coefficient for a given lake}
 \usage{
-get_kd_avg(ids, default.if.null = FALSE, src = "in-situ", datasource = NA)
+get_kd_avg(ids, default.if.null = FALSE, src = "in-situ",
+  datasource = NA)
 }
 \arguments{
 \item{ids}{The character ID for the requested kd data. Can be a character vector.}
@@ -37,4 +38,3 @@ get_kd_avg(c('WBIC_6100','asdf', 'WBIC_10000', 'asdf'), default.if.null=TRUE)
 \author{
 Luke Winslow, Jordan Read
 }
-

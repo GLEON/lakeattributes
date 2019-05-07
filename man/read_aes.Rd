@@ -21,4 +21,3 @@ This unencrypts and reads a file written with \code{\link{write_aes}}. Uses defa
 \seealso{
 \code{\link{write_aes}}.
 }
-

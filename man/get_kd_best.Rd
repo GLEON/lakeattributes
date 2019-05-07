@@ -17,6 +17,9 @@ using \code{unique(secchi$datasource)}.}
 \value{
 A data frame with columns 'year', 'secchi_avg', and 'source'.
 }
+\description{
+Return best available secchi/Kd
+}
 \details{
 This implements a hierarchical selection routine. The hierarchy is:
 \enumerate{
@@ -38,4 +41,3 @@ get_kd_best('WBIC_1881900', 1979:2012)
 
 
 }
-

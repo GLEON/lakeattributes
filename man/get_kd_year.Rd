@@ -36,4 +36,3 @@ plot(secchi_m~year, kds, type='o')
 \author{
 Luke Winslow, Jordan Read
 }
-

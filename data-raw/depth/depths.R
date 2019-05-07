@@ -1,6 +1,5 @@
 
 depths = function(){
-
 	##read in lter zmaxes
 	lter = read.csv('data-raw/depth/lter_zmax.csv', as.is=TRUE)
 	names(lter) = c('name', 'site_id', 'zmax_m')
@@ -9,7 +8,11 @@ depths = function(){
 	all_necsc = readRDS('data-raw/depth/all_depths.rds')
 	names(all_necsc) = c('site_id', 'source', 'type', 'zmax_m')
 	
+	new_depth <- readRDS('data-raw/depth/lakeattributes_depth.rds')
+	
 	zmax = rbind(all_necsc[, c('site_id', 'source', 'zmax_m')], lter[,c('site_id', 'source', 'zmax_m')])
+	zmax <- bind_rows(zmax, new_depth) %>%
+		distinct()
 	
 	return(zmax)
 	
