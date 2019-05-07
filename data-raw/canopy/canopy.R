@@ -7,6 +7,7 @@ nlcd_based$source = 'nlcd'
 # get new data from expanded footprint
 new_canopy <- readRDS('data-raw/canopy/lakeattributes_canopyheight.rds')
 
-canopy = rbind(nlcd_based, new_canopy)
+canopy = rbind(nlcd_based, new_canopy) %>%
+	distinct()
 #lets just try making it part of 'data'
 save(canopy, file='data/canopy.rdata')

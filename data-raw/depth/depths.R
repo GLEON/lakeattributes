@@ -1,6 +1,5 @@
 
 depths = function(){
-	library(dplyr)
 	##read in lter zmaxes
 	lter = read.csv('data-raw/depth/lter_zmax.csv', as.is=TRUE)
 	names(lter) = c('name', 'site_id', 'zmax_m')
